@@ -12,15 +12,15 @@ class EventController extends Controller
 {
     public function index(){
 
-        $search = request('search');
+        // $search = request('search');
 
-        if($search){
-            $events = Event::where([
-                ['title', 'like', '%'.$search.'%']
-            ])->get();
-        }
-        else $events = Event::all();
-        return view('welcome', ["events" => $events, "search" => $search]);
+        // if($search){
+        //     $events = Event::where([
+        //         ['title', 'like', '%'.$search.'%']
+        //     ])->get();
+        // }
+        // else $events = Event::all();
+        return view('welcome', ["events" => null, "search" => null]);
     }
     public function create(){
         return view('events.create');
