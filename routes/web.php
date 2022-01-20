@@ -50,3 +50,6 @@ Route::get('/produtos_teste/{id?}', function ($id = 1) {
 Route::post('/events/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
 
 Route::delete('/events/leave/{id}', [EventController::class, 'leaveEvent'])->middleware('auth');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
